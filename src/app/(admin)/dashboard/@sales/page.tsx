@@ -1,5 +1,5 @@
 import React from 'react';
-import { getSummarySales } from '../../../../../lib/api';
+import { getSummarySales } from '../../../../lib/api';
 import DashboardCard from '@/app/conponents/dashboard-card';
 import SummaryTable from '@/app/conponents/summary-table';
 import SummaryTableHeader from '@/app/conponents/summary-table-header';
@@ -7,6 +7,7 @@ import SummaryTableCell from '@/app/conponents/summary-table-cell';
 export interface PageProps {}
 export default async function Page({}: PageProps) {
   const data = await getSummarySales();
+
   return (
     <DashboardCard label="Sales details">
       <SummaryTable

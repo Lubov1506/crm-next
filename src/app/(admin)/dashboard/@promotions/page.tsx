@@ -1,5 +1,5 @@
 import React from 'react';
-import { getSummaryPromotions } from '../../../../../lib/api';
+import { getSummaryPromotions } from '../../../../lib/api';
 import DashboardCard from '@/app/conponents/dashboard-card';
 import SummaryTable from '@/app/conponents/summary-table';
 import SummaryTableHeader from '@/app/conponents/summary-table-header';

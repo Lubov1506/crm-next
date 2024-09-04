@@ -18,6 +18,7 @@ export default function Sidebar({}: SidebarProps) {
           className="py-8 mb-11 mx-auto"
           width={122}
           height={25}
+          priority={false}
           src="/icons/logo.svg"
           alt="logo"
         />

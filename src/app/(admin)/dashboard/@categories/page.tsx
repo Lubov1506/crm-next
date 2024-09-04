@@ -1,6 +1,6 @@
 import DashboardCard from '@/app/conponents/dashboard-card';
 import React from 'react';
-import { getSummaryCategories } from '../../../../../lib/api';
+import { getSummaryCategories } from '../../../../lib/api';
 import StatCard, { StatCardType } from '@/app/conponents/stat-card/stat-card';
 
 export interface PageProps {}
