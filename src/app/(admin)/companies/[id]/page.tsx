@@ -1,15 +1,16 @@
-'use client';
-
-import CompanyInfo from '@/app/conponents/company-info';
-import CompanyPromotions from '@/app/conponents/company-promotions';
+import React from 'react';
+import { notFound } from 'next/navigation';
+import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 import { Company, getCompany, getPromotions } from '@/lib/api';
 import getQueryClient from '@/lib/utils/getQueryClient';
-import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
-import { notFound } from 'next/navigation';
+import CompanyInfo from '@/app/conponents/company-info';
+import CompanyPromotions from '@/app/conponents/company-promotions';
+
 
 export interface PageProps {
   params: { id: string };
 }
+
 export default async function Page({ params }: PageProps) {
   const queryClient = getQueryClient();
 
@@ -32,18 +33,17 @@ export default async function Page({ params }: PageProps) {
   }
 
   const dehydratedState = dehydrate(queryClient);
+
   return (
-    <>
-      <HydrationBoundary state={dehydratedState}>
-        <div className="py-6 px-10 grid grid-cols-12 gap-5">
-          <div className="col-span-3">
-            <CompanyInfo companyId={params.id} />
-          </div>
-          <div className="col-span-9">
-            <CompanyPromotions companyId={params.id} />
-          </div>
+    <HydrationBoundary state={dehydratedState}>
+      <div className="py-6 px-10 grid grid-cols-12 gap-5">
+        <div className="col-span-3">
+          <CompanyInfo companyId={params.id} />
         </div>
-      </HydrationBoundary>
-    </>
+        <div className="col-span-9">
+          <CompanyPromotions companyId={params.id} />
+        </div>
+      </div>
+    </HydrationBoundary>
   );
 }

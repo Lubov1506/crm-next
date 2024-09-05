@@ -1,7 +1,4 @@
 'use client';
-
-import dynamic from 'next/dynamic';
-import { useState } from 'react';
 import { Button } from './button';
 import { useRouter } from 'next/navigation';
 
@@ -10,7 +7,9 @@ export const AddCompanyButton = () => {
 
   return (
     <>
-      <Button onClick={() => router.push('/companies/new')}>Add company</Button>
+       <Button onClick={() => router.push('/companies/new', { scroll: false })}>
+      Add company
+    </Button>
     </>
   );
 };
