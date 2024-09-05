@@ -34,7 +34,7 @@ export default function StatCard({ type, label, counter }: StatCardProps) {
       >
         {label}
       </p>
-      <p className="text-6xl font-semibold">{counter}</p>
+      <p className="text-6xl font-semibold">{counter || '0'}</p>
     </div>
   );
 }

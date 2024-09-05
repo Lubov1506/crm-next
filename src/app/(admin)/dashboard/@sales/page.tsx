@@ -19,10 +19,10 @@ export default async function Page({}: PageProps) {
           </>
         }
       >
-        {data.map(({ companyId, companyTitle, soId, income }) => (
+        {data.map(({ companyId, companyTitle, sold, income }) => (
           <tr key={companyId}>
             <SummaryTableCell>{companyTitle}</SummaryTableCell>
-            <SummaryTableCell align="center">{soId}</SummaryTableCell>
+            <SummaryTableCell align="center">{sold}</SummaryTableCell>
             <SummaryTableCell align="center">{`$${income}`}</SummaryTableCell>
           </tr>
         ))}
